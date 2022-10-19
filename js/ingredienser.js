@@ -1,0 +1,1 @@
+export const ingredienser = ['pizzabunn','tomatsaus','ost', 'skinke', 'bacon', 'ananas', 'tomat', 'ost2', 'pølse']
