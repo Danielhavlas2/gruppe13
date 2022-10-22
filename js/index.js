@@ -9,6 +9,9 @@ startKnapp.addEventListener('click', startSpill)
 let nyPizza = []
 let kundePizza = []
 
+let time = 30;
+let points = 0;
+
 function startSpill() {
     kundePizza = nyttPizzaOrdre()
     console.log(kundePizza);
@@ -23,6 +26,14 @@ function startSpill() {
             spill.appendChild(ingrKnapp)
         })
     },3000)
+
+    setInterval( () => {
+        time -= 1; 
+        
+        if (time === 0) {
+            spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
+        }  
+      }, 1000);
 }
 
 function lagPizza(ingrediens) {
