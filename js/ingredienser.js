@@ -1,1 +1,0 @@
-export const ingredienser = ['pizzabunn','tomatsaus','ost', 'pepperoni', 'bacon', 'paprika', 'jalapenos', 'løk', 'basilikum', 'sopp']
