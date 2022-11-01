@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppe 13 spill</title>
     <link rel="stylesheet" href="./css/spill.css">
+    <link rel="stylesheet" href="./css/css.css">
 </head>
 <body>
-    <h1 id="timer"></h1>
-    <h1 id="poeng"></h1>
-    <h1>Gruppe 13 spill</h1>
-    <button id="start-spill">Start spill</button>
-    <div id="spill">
+    <img src="./img/restaurant.png" alt="" class="background">
+    <div class="spill-container">
+        <div class="timer-container">
+            <p class="timer-text"></p>
+            <div class="timer-bar"></div>
+        </div>
+        <h1 class="poeng"></h1>
+        <h1>Gruppe 13 spill</h1>
+        <button id="start-spill">Start spill</button>
         <h2 id="kundePizza"></h2>
         <div id="pizza"></div>
+        <div class="ingrediens-knapper"></div>
+        <h1 id="spillRes"></h1>
     </div>
-    <h1 id="spillRes"></h1>
     <script type="module" src="/js/index.js"></script>
 </body>
 </html>

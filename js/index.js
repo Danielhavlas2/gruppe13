@@ -1,26 +1,29 @@
 import {ingredienser} from './ingredienser.js'
 
 const startKnapp = document.querySelector('#start-spill')
-const timer = document.querySelector('#timer')
-const poeng = document.querySelector('#poeng')
-const spill = document.querySelector('#spill')
+const timer = document.querySelector('.timer-text')
+const timerBar = document.querySelector('.timer-bar')
+const poeng = document.querySelector('.poeng')
+const spillContainer = document.querySelector('.spill-container')
 const kundePizzaE = document.querySelector('#kundePizza')
+const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
 const spillRes = document.querySelector('#spillRes')
 const pizza = document.querySelector('#pizza')
 startKnapp.addEventListener('click', startSpill)
 
 ingredienser.forEach(ingrediens => {
     const ingrKnapp = document.createElement('img')
-    ingrKnapp.setAttribute('class', 'ingrediensKnapp')
+    ingrKnapp.setAttribute('class', 'ingrediens-knapp')
     ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
     ingrKnapp.addEventListener('click', () => lagPizza(ingrediens))
-    spill.appendChild(ingrKnapp)
+    ingrediensKnapper.appendChild(ingrKnapp)
 })
 
 let nyPizza = []
 let kundePizza = []
 
-let time = 30;
+const startTime = 30
+let time = startTime;
 timer.innerHTML = time
 let points = 0;
 poeng.innerHTML = points
@@ -29,11 +32,12 @@ let pizzaTimeout;
 
 function startSpill() {
     startKnapp.style.display = 'none'
-    time = 30
+    time = startTime
     nyKunde()
     const spillTimer =  setInterval( () => {
         time -= 1; 
         timer.innerHTML = time
+        timerBar.style.transform = `scaleX(${time / startTime})`
         if (time === 0) {
             startKnapp.display = 'block'
             clearInterval(spillTimer)
