@@ -1,113 +1,203 @@
-html, body {
+/* html, body {
     height: 100%;
     font-family: Monaco, monospace;
 }
 
-.divmain {
-    margin: 25px;
-}
 
+/* HJEMSIDE*/
 h1 {
-    font-family: monaco, monospace;
-    
-}
-
-/* navigasjonsbar */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    padding: 0;
-}
-
-.nav-item {
-    color:black;
-}
-
-.nav-link {
-    color: black;
     text-align: center;
 }
 
-
-.nav-item.active {
-    background-color: forestgreen;
+.container {
+    height: 500px;
+    position: relative;
 }
 
-.nav-item:hover {
-    background-color: maroon;
+/* start spill knapp */
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    background-color: #EA8C8F; 
+    border: none;
     color: white;
-}
-
-/*instruksjoner*/
-.div2 {
-    padding: 50px;
-    column-width: 100%;
-    margin: 25px;
-    float: center;
-    font-family: monaco, monospace;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.tekstboks2 {
-    border: 3px dashed maroon;
-    float: left;
-    width: 90%;
-    margin: 5px;
-    height: auto;
-}
-
-h4 {
-    font-family: monaco, monospace;
-    font-weight:bolder;
-    margin: 15px;
-    font-size: 32px;
-    text-align: left;
-    color: forestgreen;
-}
-
-#two {
-    text-align: left;
-    font-family: monaco, monospace;
-    font: 15px;
-    margin: 15px;
-}
-
-/* om spillet*/
-.div1 {
-    padding: 50px;
-    column-width: 100%;
-    margin: 25px;
-    float: center;
-    font-family: monaco, monospace;
-}
-
-* {
-    box-sizing: border-box;
-}
-.tekstboks {
-    border: 3px dashed maroon;
-    float: left;
-    width: 30%;
-    margin: 10px;
-    height: 400px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
   }
 
 
-h5 {
-    font-family: monaco, monospace;
-    font-weight:bolder;
-    margin: 15px;
-    font-size: 32px;
-    text-align: center;
+
+/* instruksjoner og om oss */
+
+* {box-sizing: border-box}
+
+
+.tab {
+    float: right;
+    width: 20%;
+    height: 500px;
 }
 
-#one {
+.tab button {
+    display: block;
+    color: black;
+
+}
+
+
+.buttonlink1 {
+    background-color: #1c87c9;
+    border: none;
+    color: white;
+    padding: 20px 34px;
     text-align: center;
-    font-family: monaco, monospace;
-    font: 20px;
-    margin: 15px;
-    }
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 180px 2px 0px;
+    cursor: pointer;
+}
+
+.buttonlink2 {
+    background-color: #1c87c9;
+    border: none;
+    color: white;
+    padding: 20px 57px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 2px 215px;
+    cursor: pointer;
+}
+
+
+
+/*highscore*/
+
+.tab2 {
+    float: left;
+    width: 20%;
+    height: 400px;
+    background-color: darkolivegreen;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+
+
+/* Instruksjoner og om oss*/
+
+
+
+.leftcorner {
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /*-ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+}
+
+.buttontilbake {
+    background-color: #F6A192; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+  .instruksjoncontainer {
+    height: 400px;
+    width: 900px;
+    position: relative;
+    margin: auto;
+    border: 1px solid lightgray;
+    text-align: center;
+  }
+
+
+
+
+  /*spill side*/
+
+  .buttonspill {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+ 
+  .leftuppercorner {
+    margin: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%
+  }
+
+  .rightuppercorner {
+    margin: 0;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  .divpoeng {
+    background-color: grey; 
+    border: none;
+    color: white;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 50px;
+    width: 100px;
+  }
+
+
+  .timerplassering {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 70;
+    left: 15%;
+    right: 15%;
+  }
+
+
+  .timer {
+    background-color: darkslategray;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+
+
+
