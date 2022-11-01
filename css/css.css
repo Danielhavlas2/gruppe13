@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    font-family: Monaco, monospace;
+}
+
+.divmain {
+    margin: 25px;
+}
+
+h1 {
+    font-family: monaco, monospace;
+    
+}
+
+/* navigasjonsbar */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    padding: 0;
+}
+
+.nav-item {
+    color:black;
+}
+
+.nav-link {
+    color: black;
+    text-align: center;
+}
+
+
+.nav-item.active {
+    background-color: forestgreen;
+}
+
+.nav-item:hover {
+    background-color: maroon;
+    color: white;
+}
+
+/*instruksjoner*/
+.div2 {
+    padding: 50px;
+    column-width: 100%;
+    margin: 25px;
+    float: center;
+    font-family: monaco, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.tekstboks2 {
+    border: 3px dashed maroon;
+    float: left;
+    width: 90%;
+    margin: 5px;
+    height: auto;
+}
+
+h4 {
+    font-family: monaco, monospace;
+    font-weight:bolder;
+    margin: 15px;
+    font-size: 32px;
+    text-align: left;
+    color: forestgreen;
+}
+
+#two {
+    text-align: left;
+    font-family: monaco, monospace;
+    font: 15px;
+    margin: 15px;
+}
+
+/* om spillet*/
+.div1 {
+    padding: 50px;
+    column-width: 100%;
+    margin: 25px;
+    float: center;
+    font-family: monaco, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+.tekstboks {
+    border: 3px dashed maroon;
+    float: left;
+    width: 30%;
+    margin: 10px;
+    height: 400px;
+  }
+
+
+h5 {
+    font-family: monaco, monospace;
+    font-weight:bolder;
+    margin: 15px;
+    font-size: 32px;
+    text-align: center;
+}
+
+#one {
+    text-align: center;
+    font-family: monaco, monospace;
+    font: 20px;
+    margin: 15px;
+    }
