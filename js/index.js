@@ -75,7 +75,7 @@ function lagPizza(ingrediens) {
                 time += 3
                 poeng.innerHTML = points
             }else{
-                time -= 2
+                poeng < 10? time -= 2 : time -= 5
             }
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
             nyKunde() 
