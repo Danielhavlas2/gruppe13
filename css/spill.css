@@ -65,3 +65,23 @@
     top: 1rem;
     right: 1rem;
 }
+
+.figur-container{
+    overflow: hidden;
+    position: relative;
+}
+
+.figur{
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transition: all 1000 ease-in-out;
+}
+
+.figur-inn{
+    left: 50%;
+}
+
+.figur-ut{
+    left: 110%;
+}

@@ -1,4 +1,4 @@
-import {ingredienser} from './ingredienser.js'
+import {ingredienser} from './data.js'
 
 const startKnapp = document.querySelector('#start-spill')
 
@@ -6,6 +6,7 @@ const timer = document.querySelector('.timer-text')
 const timerBar = document.querySelector('.timer-bar')
 const poeng = document.querySelector('.poeng')
 const spillContainer = document.querySelector('.spill-container')
+const figurContainer = document.querySelector('.figur-container')
 
 const kundePizzaE = document.querySelector('#kundePizza')
 const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
@@ -23,9 +24,16 @@ ingredienser.forEach(ingrediens => {
 
 })
 
+function figur() {
+    const figurE = document.createElement('img')
+    const randomTall = Math.ceil(Math.random() * 8)
+    figurE.className = 'figur figur-inn'
+    figurE.src = `../img/figurer/figur${randomTall}.png`
+    figurContainer.appendChild(figurE)
+}
+
 let nyPizza = []
 let kundePizza = []
-
 
 const startTime = 30
 let time = startTime;
@@ -63,8 +71,8 @@ function startSpill() {
         timer.innerHTML = time
 
         timerBar.style.transform = `scaleX(${time / startTime})`
-        if (time === 0) {
-            startKnapp.display = 'block'
+        if (time <= 0) {
+            startKnapp.style.display = 'block'
             clearInterval(spillTimer)
             spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
             lydTimeOut.play()
@@ -79,6 +87,8 @@ function nyKunde() {
     console.log(kundePizza);
     kundePizzaE.innerHTML = kundePizza
     kundePizzaE.style.display = 'block'
+    figur()
+
 
     // pizzaTimeout = setTimeout(() => {
     //     kundePizzaE.style.display = 'none'
@@ -105,6 +115,7 @@ function lagPizza(ingrediens) {
                 poeng < 10? time -= 2 : time -= 5
                 lydFail.play();
             }
+            figurContainer.firstElementChild.className = 'figur figur-ut'
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
             nyKunde() 
             pizza.innerHTML = ''
