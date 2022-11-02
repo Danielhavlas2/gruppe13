@@ -102,7 +102,7 @@ function lagPizza(ingrediens) {
 
                lydWin.play();
             }else{
-                time -= 2
+               poeng < 10? time -= 2 : time -= 5
                 lydFail.play();
             }
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
