@@ -1,10 +1,12 @@
 import {ingredienser} from './ingredienser.js'
 
 const startKnapp = document.querySelector('#start-spill')
+
 const timer = document.querySelector('.timer-text')
 const timerBar = document.querySelector('.timer-bar')
 const poeng = document.querySelector('.poeng')
 const spillContainer = document.querySelector('.spill-container')
+
 const kundePizzaE = document.querySelector('#kundePizza')
 const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
 const spillRes = document.querySelector('#spillRes')
@@ -13,23 +15,31 @@ startKnapp.addEventListener('click', startSpill)
 
 ingredienser.forEach(ingrediens => {
     const ingrKnapp = document.createElement('img')
+
     ingrKnapp.setAttribute('class', 'ingrediens-knapp')
     ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
     ingrKnapp.addEventListener('click', () => lagPizza(ingrediens))
     ingrediensKnapper.appendChild(ingrKnapp)
+
 })
 
 let nyPizza = []
 let kundePizza = []
 
+
 const startTime = 30
 let time = startTime;
+
 timer.innerHTML = time
 let points = 0;
 poeng.innerHTML = points
 
 let pizzaTimeout;
 
+
+let lydWin = new sound("../lyd/points.mp3");
+let lydFail = new sound("../lyd/fail.mp3");
+let lydTimeOut = new sound("../lyd/wrong.mp3");
 function startSpill() {
     startKnapp.style.display = 'none'
     time = startTime
@@ -37,6 +47,21 @@ function startSpill() {
     const spillTimer =  setInterval( () => {
         time -= 1; 
         timer.innerHTML = time
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
         timerBar.style.transform = `scaleX(${time / startTime})`
         if (time === 0) {
             startKnapp.display = 'block'
@@ -74,8 +99,11 @@ function lagPizza(ingrediens) {
                 points++
                 time += 3
                 poeng.innerHTML = points
+
+               lydWin.play();
             }else{
-                poeng < 10? time -= 2 : time -= 5
+               poeng < 10? time -= 2 : time -= 5
+                lydFail.play();
             }
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
             nyKunde() 
