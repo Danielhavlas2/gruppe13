@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     font-family: Monaco, monospace;
+    margin: 0;
 }
 
 .divmain {
@@ -50,6 +51,7 @@ h1 {
 
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 .tekstboks2 {

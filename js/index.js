@@ -1,53 +1,52 @@
 import {ingredienser} from './ingredienser.js'
 
 const startKnapp = document.querySelector('#start-spill')
-const timer = document.querySelector('#timer')
-const poeng = document.querySelector('#poeng')
-const spill = document.querySelector('#spill')
+
+const timer = document.querySelector('.timer-text')
+const timerBar = document.querySelector('.timer-bar')
+const poeng = document.querySelector('.poeng')
+const spillContainer = document.querySelector('.spill-container')
+
 const kundePizzaE = document.querySelector('#kundePizza')
+const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
 const spillRes = document.querySelector('#spillRes')
 const pizza = document.querySelector('#pizza')
 startKnapp.addEventListener('click', startSpill)
 
 ingredienser.forEach(ingrediens => {
     const ingrKnapp = document.createElement('img')
-    ingrKnapp.setAttribute('class', 'ingrediensKnapp')
+
+    ingrKnapp.setAttribute('class', 'ingrediens-knapp')
     ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
     ingrKnapp.addEventListener('click', () => lagPizza(ingrediens))
-    spill.appendChild(ingrKnapp)
+    ingrediensKnapper.appendChild(ingrKnapp)
+
 })
 
 let nyPizza = []
 let kundePizza = []
 
-let time = 30;
+
+const startTime = 30
+let time = startTime;
+
 timer.innerHTML = time
 let points = 0;
 poeng.innerHTML = points
 
 let pizzaTimeout;
 
+
 let lydWin = new sound("../lyd/points.mp3");
 let lydFail = new sound("../lyd/fail.mp3");
 let lydTimeOut = new sound("../lyd/wrong.mp3");
-
 function startSpill() {
     startKnapp.style.display = 'none'
-    time = 30
+    time = startTime
     nyKunde()
     const spillTimer =  setInterval( () => {
         time -= 1; 
         timer.innerHTML = time
-        if (time === 0) {
-            startKnapp.display = 'block'
-            clearInterval(spillTimer)
-            lydTimeOut.play();
-            spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
-        }  
-    }, 1000);
-    
-
-}
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -63,6 +62,15 @@ function sound(src) {
       this.sound.pause();
     }
   }
+        timerBar.style.transform = `scaleX(${time / startTime})`
+        if (time === 0) {
+            startKnapp.display = 'block'
+            clearInterval(spillTimer)
+            spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
+        }  
+    }, 1000);
+
+}
 
 function nyKunde() {
     nyPizza = []
@@ -91,7 +99,8 @@ function lagPizza(ingrediens) {
                 points++
                 time += 3
                 poeng.innerHTML = points
-                lydWin.play();
+
+               lydWin.play();
             }else{
                 time -= 2
                 lydFail.play();
