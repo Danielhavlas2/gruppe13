@@ -1,68 +1,42 @@
-import {ingredienser} from './data.js'
+import {musikk, eastereggmusikk, lydWin, lydFail, lydTimeOut} from './utils/lyd.js'
+import {figur, lagKnapper, nyttPizzaOrdre} from './utils/funksjoner.js'
 
 const startKnapp = document.querySelector('#start-spill')
-
 const timer = document.querySelector('.timer-text')
 const timerBar = document.querySelector('.timer-bar')
 const poeng = document.querySelector('.poeng')
 const spillContainer = document.querySelector('.spill-container')
 const figurContainer = document.querySelector('.figur-container')
-
 const kundePizzaE = document.querySelector('#kundePizza')
-const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
 const spillRes = document.querySelector('#spillRes')
 const pizza = document.querySelector('#pizza')
-startKnapp.addEventListener('click', startSpill)
 
-ingredienser.forEach(ingrediens => {
-    const ingrKnapp = document.createElement('img')
+lagKnapper(lagPizza)
 
-    ingrKnapp.setAttribute('class', 'ingrediens-knapp')
-    ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
-    ingrKnapp.addEventListener('click', () => lagPizza(ingrediens))
-    ingrediensKnapper.appendChild(ingrKnapp)
-
-})
-
-function figur() {
-    const figurE = document.createElement('img')
-    const randomTall = Math.ceil(Math.random() * 8)
-    figurE.className = 'figur figur-inn'
-    figurE.src = `../img/figurer/figur${randomTall}.png`
-    figurContainer.appendChild(figurE)
-}
+startKnapp.onclick = startSpill
 
 let nyPizza = []
 let kundePizza = []
 
 const startTime = 30
 let time = startTime;
-
 timer.innerHTML = time
+
 let points = 0;
+let totalPizza = 0;
 poeng.innerHTML = points
 
 let pizzaTimeout;
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-      this.sound.play();
-    }
-    this.stop = function(){
-      this.sound.pause();
-    }
-  }
 
-
-let lydWin = new sound("../lyd/points.mp3");
-let lydFail = new sound("../lyd/fail.mp3");
-let lydTimeOut = new sound("../lyd/wrong.mp3");
 function startSpill() {
+
+    const musikkNum = Math.random()*100
+    if(musikkNum > 1){
+        eastereggmusikk.play()
+    }else{
+        musikk.play()
+    }
+    figurContainer.innerHTML = ''
     startKnapp.style.display = 'none'
     time = startTime
     nyKunde()
@@ -70,8 +44,9 @@ function startSpill() {
         time -= 1; 
         timer.innerHTML = time
 
-        timerBar.style.transform = `scaleX(${time / startTime})`
+        timerBar.style.transform = `scaleX(${time === 0? 0 : (time / startTime)-1/30})`
         if (time <= 0) {
+            figurContainer.firstElementChild.className = 'figur figur-ut'
             startKnapp.style.display = 'block'
             clearInterval(spillTimer)
             spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
@@ -88,8 +63,6 @@ function nyKunde() {
     kundePizzaE.innerHTML = kundePizza
     kundePizzaE.style.display = 'block'
     figur()
-
-
     // pizzaTimeout = setTimeout(() => {
     //     kundePizzaE.style.display = 'none'
     // },10000)
@@ -99,12 +72,14 @@ function nyKunde() {
 function lagPizza(ingrediens) {
     if(time > 0){
         nyPizza.push(ingrediens)
-        console.log(ingrediens);
+
         const ingr = document.createElement('img')
         ingr.setAttribute('class', 'ingrediensKnapp')
         ingr.src = `../img/ikoner/${ingrediens}.png`
         pizza.appendChild(ingr)
+
         if(nyPizza.length === kundePizza.length) {
+            totalPizza++;
             const likt = kundePizza.every((v,i) => v === nyPizza[i])
             if(likt){
                 points++
@@ -115,7 +90,8 @@ function lagPizza(ingrediens) {
                 poeng < 10? time -= 2 : time -= 5
                 lydFail.play();
             }
-            figurContainer.firstElementChild.className = 'figur figur-ut'
+            
+            figurContainer.childNodes[totalPizza-1].className = 'figur figur-ut'
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
             nyKunde() 
             pizza.innerHTML = ''
@@ -124,15 +100,4 @@ function lagPizza(ingrediens) {
     }
 }
 
-function nyttPizzaOrdre() {
-    let pizzaArray = ['bunn', 'saus']
-    let tempIngredienser = [...ingredienser]
-    tempIngredienser.splice(0,2)
-    const antallIngredienser = Math.ceil(Math.random() * (ingredienser.length-7)) + 1
-    for (let i = 0; i < antallIngredienser; i++) {
-        const ingrediensIndex = Math.floor(Math.random() * tempIngredienser.length)
-        pizzaArray.push(tempIngredienser[ingrediensIndex])
-        tempIngredienser.splice(ingrediensIndex,1)
-    }
-    return pizzaArray
-}
+

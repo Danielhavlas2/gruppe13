@@ -17,6 +17,7 @@
     height: 70px;
     filter: drop-shadow(5px 5px 5px #222);
     transition: filter 100ms ease-out, scale 100ms ease-out;
+    z-index: 2;
 }
 .ingrediens-knapp:hover {
     scale: 1.2;
@@ -27,6 +28,13 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+}
+
+.b0{
+    z-index: -3;
+}
+
+.b1{
     z-index: -1;
 }
 
@@ -68,14 +76,19 @@
 
 .figur-container{
     overflow: hidden;
-    position: relative;
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    top: 27.7vh;
 }
 
 .figur{
     position: absolute;
-    top: 50%;
     left: -50px;
-    transition: all 1000 ease-in-out;
+    transition: all 1000ms ease-in-out;
+    width: 300px;
+    margin-left: -150px;
+    z-index: -2;
 }
 
 .figur-inn{
