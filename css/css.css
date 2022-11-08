@@ -25,7 +25,7 @@ h1 {
 }
 
 .button {
-    background-color: #EA8C8F; 
+    background-color: #CC7722; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -37,7 +37,7 @@ h1 {
 
 
 
-/* instruksjoner og om oss */
+/* hjem */
 
 * {box-sizing: border-box}
 
@@ -56,7 +56,7 @@ h1 {
 
 
 .buttonlink1 {
-    background-color: #1c87c9;
+    background-color: maroon;
     border: none;
     color: white;
     padding: 20px 34px;
@@ -69,7 +69,7 @@ h1 {
 }
 
 .buttonlink2 {
-    background-color: #1c87c9;
+    background-color: maroon;
     border: none;
     color: white;
     padding: 20px 57px;
@@ -89,7 +89,7 @@ h1 {
     float: left;
     width: 20%;
     height: 400px;
-    background-color: darkolivegreen;
+    background-color: #00301E;
     text-align: center;
     color: white;
     margin-top: 50px;
@@ -113,7 +113,7 @@ h1 {
 }
 
 .buttontilbake {
-    background-color: #F6A192; 
+    background-color: #CC7722; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -125,79 +125,13 @@ h1 {
 
 
   .instruksjoncontainer {
-    height: 400px;
+    height: auto;
     width: 900px;
     position: relative;
     margin: auto;
     border: 1px solid lightgray;
     text-align: center;
   }
-
-
-
-
-  /*spill side*/
-
-  .buttonspill {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-
- 
-  .leftuppercorner {
-    margin: 0;
-    position: absolute;
-    top: 0%;
-    left: 0%
-  }
-
-  .rightuppercorner {
-    margin: 0;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-  }
-
-  .divpoeng {
-    background-color: grey; 
-    border: none;
-    color: white;
-    padding: 0px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    height: 50px;
-    width: 100px;
-  }
-
-
-  .timerplassering {
-    margin: 0;
-    position: absolute;
-    top: 0;
-    width: 70;
-    left: 15%;
-    right: 15%;
-  }
-
-
-  .timer {
-    background-color: darkslategray;
-    text-align: center;
-    color: white;
-    padding: 5px;
-    font-size: 16px;
-  }
-
 
 
 
