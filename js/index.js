@@ -35,19 +35,6 @@ let points = 0;
 poeng.innerHTML = points
 
 let pizzaTimeout;
-
-
-let lydWin = new sound("../lyd/points.mp3");
-let lydFail = new sound("../lyd/fail.mp3");
-let lydTimeOut = new sound("../lyd/wrong.mp3");
-function startSpill() {
-    startKnapp.style.display = 'none'
-    time = startTime
-    nyKunde()
-    const spillTimer =  setInterval( () => {
-        time -= 1; 
-        timer.innerHTML = time
-
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -62,11 +49,25 @@ function sound(src) {
       this.sound.pause();
     }
   }
+
+
+let lydWin = new sound("../lyd/points.mp3");
+let lydFail = new sound("../lyd/fail.mp3");
+let lydTimeOut = new sound("../lyd/wrong.mp3");
+function startSpill() {
+    startKnapp.style.display = 'none'
+    time = startTime
+    nyKunde()
+    const spillTimer =  setInterval( () => {
+        time -= 1; 
+        timer.innerHTML = time
+
         timerBar.style.transform = `scaleX(${time / startTime})`
         if (time === 0) {
             startKnapp.display = 'block'
             clearInterval(spillTimer)
             spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
+            lydTimeOut.play()
         }  
     }, 1000);
 
@@ -99,10 +100,9 @@ function lagPizza(ingrediens) {
                 points++
                 time += 3
                 poeng.innerHTML = points
-
-               lydWin.play();
+                lydWin.play();
             }else{
-                time -= 2
+                poeng < 10? time -= 2 : time -= 5
                 lydFail.play();
             }
             spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
