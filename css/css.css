@@ -255,6 +255,24 @@ h4 {
     font-size: 16px;
   }
 
+button#playPauseKnapp{
+    background:url(ikoner/pause.png) no-repeat; //pause.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline: none;
+}
+
+button#muteKnapp{
+    background:url(ikoner/speaker.png) no-repeat; //speaker.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline:none;
+}
+
 
 
 
