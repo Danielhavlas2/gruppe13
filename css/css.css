@@ -26,7 +26,7 @@ h1 {
 }
 
 .button {
-    background-color: #EA8C8F; 
+    background-color: #CC7722; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -93,7 +93,7 @@ h4 {
 
 
 
-/* instruksjoner og om oss */
+/* hjem */
 
 * {
     box-sizing: border-box;
@@ -113,7 +113,7 @@ h4 {
 
 
 .buttonlink1 {
-    background-color: #1c87c9;
+    background-color: maroon;
     border: none;
     color: white;
     padding: 20px 34px;
@@ -126,7 +126,7 @@ h4 {
 }
 
 .buttonlink2 {
-    background-color: #1c87c9;
+    background-color: maroon;
     border: none;
     color: white;
     padding: 20px 57px;
@@ -146,7 +146,7 @@ h4 {
     float: left;
     width: 20%;
     height: 400px;
-    background-color: darkolivegreen;
+    background-color: #00301E;
     text-align: center;
     color: white;
     margin-top: 50px;
@@ -170,7 +170,7 @@ h4 {
 }
 
 .buttontilbake {
-    background-color: #F6A192; 
+    background-color: #CC7722; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -182,7 +182,7 @@ h4 {
 
 
   .instruksjoncontainer {
-    height: 400px;
+    height: auto;
     width: 900px;
     position: relative;
     margin: auto;
@@ -255,6 +255,22 @@ h4 {
     font-size: 16px;
   }
 
+button#playPauseKnapp{
+    background:url(ikoner/pause.png) no-repeat; //pause.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline: none;
+}
 
+button#muteKnapp{
+    background:url(ikoner/speaker.png) no-repeat; //speaker.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline:none;
+}
 
 
