@@ -192,3 +192,85 @@ h4 {
 
 
 
+
+  /*spill side*/
+
+  .buttonspill {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+ 
+  .leftuppercorner {
+    margin: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%
+  }
+
+  .rightuppercorner {
+    margin: 0;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  .divpoeng {
+    background-color: grey; 
+    border: none;
+    color: white;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 50px;
+    width: 100px;
+  }
+
+
+  .timerplassering {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 70;
+    left: 15%;
+    right: 15%;
+  }
+
+
+  .timer {
+    background-color: darkslategray;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+button#playPauseKnapp{
+    background:url(ikoner/pause.png) no-repeat; //pause.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline: none;
+}
+
+button#muteKnapp{
+    background:url(ikoner/speaker.png) no-repeat; //speaker.png
+    border:none;
+    width: 12px;
+    height: 14px;
+    cursor:pointer;
+    outline:none;
+}
+
+
