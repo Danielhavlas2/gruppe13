@@ -10,13 +10,13 @@ function sound(src, loop) {
   document.body.appendChild(this.sound);
   this.play = function(){
     this.sound.play();
-  }
+  }  
   this.stop = function(){
     this.sound.pause();
   }
 }
 
-export const musikk = new sound("../lyd/musikk.wav", true)
+export const musikk = new sound("../lyd/musikk1.wav", true)
 export const eastereggmusikk = new sound("../lyd/eastereggmusikk.wav", true)
 export const lydWin = new sound("../lyd/points.mp3");
 export const lydFail = new sound("../lyd/fail.mp3");
