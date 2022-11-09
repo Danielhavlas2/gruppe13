@@ -81,7 +81,7 @@ function lagPizza(ingrediens) {
             totalPizza++;
             const likt = kundePizza.every((v,i) => v === nyPizza[i])
             if(likt){
-                points++
+                points++    
                 time += 3
                 poeng.innerHTML = points
                 lydWin.play();
