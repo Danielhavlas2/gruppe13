@@ -125,3 +125,40 @@ function nyttPizzaOrdre() {
     }
     return pizzaArray
 }
+
+var audio, playKnapp, muteKnapp, seek_bar;
+function initAudioPlayer(){
+    audio = new Audio();
+    audio.src = "lyd/Eksempel.mp3"; // Legg til bakgrunnsmusikk her senere
+    audio.loop = true;
+    audio.play();
+
+    playKnapp = document.getElementById("playPauseKnapp");
+    muteKnapp = document.getElementById("muteKnapp");
+
+    playKnapp.addEventListener("click",playPause);
+    muteKnapp.addEventListener("click",mute);
+
+    function playPause (){
+     if(audio.paused){
+            audio.play();
+            playKnapp.style.background = "url (ikoner/pause.png) no-repeat";
+     } else  {
+        audio.pause();
+        playKnapp.style.background = "url (ikoner/play.png) no-repeat";
+     }
+
+    }
+    function mute (){
+         if (audio.muted){
+            audio.muted = false;
+            muteKnapp.style.background = "url (ikoner/speaker.png) no-repeat";
+     }   else {
+            audio.muted = true;
+            muteKnapp.style.background = "url (ikoner/speaker_muted.png) no-repeat"; 
+     } 
+   
+    }
+
+}
+window.addEventListener("load", initAudioPlayer);
