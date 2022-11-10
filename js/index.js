@@ -75,10 +75,10 @@ function lagPizza(ingrediens) {
     if(time > 0 && !paused){
         nyPizza.push(ingrediens)
 
-        const ingr = document.createElement('img')
-        ingr.setAttribute('class', 'ingrediensKnapp')
-        ingr.src = `../img/ikoner/${ingrediens}.png`
-        pizza.appendChild(ingr)
+        // const ingr = document.createElement('img')
+        // ingr.setAttribute('class', 'ingrediensKnapp')
+        // ingr.src = `../img/ikoner/${ingrediens}.png`
+        // pizza.appendChild(ingr)
 
         if(nyPizza.length === kundePizza.length) {
             totalPizza++;
