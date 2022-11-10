@@ -25,9 +25,19 @@
     </div>
 
 
-    <div class="tab2">
-        <h2>Highscore</h2>
+    <div class="highscore-container">
+        <label for="navn">Navnet ditt:</label>
+        <input name="navn" type="text">
+        <button id="registrer-bruker">Registrer</button>
+        <button id="registrer-bruke">Registrer</button>
+        <button id="registrer-brke">Registrer</button>
+        <ol id="highscores">
+            <h2>Highscore</h2>
+        </ol>
     </div>
-    
+    <script type="module" src="./js/home.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </body>
 </html>

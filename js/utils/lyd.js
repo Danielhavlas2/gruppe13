@@ -14,6 +14,11 @@ function sound(src, loop) {
   this.stop = function(){
     this.sound.pause();
   }
+  this.pause = function(){
+    this.sound.pause()
+  }
+  this.muted = false
+  
 }
 
 export const musikk = new sound("../lyd/musikk1.wav", true)

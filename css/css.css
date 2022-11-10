@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     font-family: Monaco, monospace;
     margin: 0;
+    line-height: 1.5rem;
 }
 
 
@@ -10,7 +11,12 @@ h1 {
     text-align: center;
 }
 
+h3{
+    margin-top: 2rem;
+}
+
 .container {
+    padding: 2rem;
     height: 500px;
     position: relative;
 }
@@ -142,7 +148,7 @@ h4 {
 
 /*highscore*/
 
-.tab2 {
+.highscores {
     float: left;
     width: 20%;
     height: 400px;
@@ -255,6 +261,16 @@ h4 {
     font-size: 16px;
   }
 
+<<<<<<< Updated upstream
 
+=======
+.spill-knapp{
+    border:none;
+    width: 2rem;
+    height: 2rem;
+    cursor:pointer;
+    outline:none;
+}
+>>>>>>> Stashed changes
 
 
