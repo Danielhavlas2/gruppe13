@@ -108,9 +108,6 @@ function lagPizza(ingrediens) {
     }
 }
 
-<<<<<<< Updated upstream
-
-=======
 var playKnapp, muteKnapp;
 function initAudioPlayer(){
 
@@ -146,4 +143,3 @@ function initAudioPlayer(){
 
 }
 window.addEventListener("load", initAudioPlayer);
->>>>>>> Stashed changes
