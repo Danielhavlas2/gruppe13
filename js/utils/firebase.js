@@ -1,3 +1,5 @@
+import ShortUniqueId from 'https://esm.sh/short-unique-id';
+
 const firebaseConfig = {
     apiKey: "AIzaSyCi319wgxZLuLs53N9-IqvHf75QSzJTgxM",
     authDomain: "gruppe13-spill.firebaseapp.com",
@@ -8,24 +10,11 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-export const signInGuest = () => {
-    firebase.auth().signInAnonymously()
-}
-
-let user 
-
-firebase.auth().onAuthStateChanged((userAuth) => {
-    if(userAuth){
-        console.log(userAuth);
-        user = userAuth.uid
-    }
-})
-
 const firestore = firebase.firestore()
-
+const randomKey = new ShortUniqueId({length: 12})
 
 export const uploadScore = async (username, score) => {
-    await firestore.collection('game').doc('scores').update({[user]: {username, score}})
+    await firestore.collection('game').doc('scores').update({[randomKey()]: {username, score}})
 }
 
 export const getScores = async () => {

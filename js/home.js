@@ -1,4 +1,4 @@
-import { signInGuest, uploadScore, getScores } from "./utils/firebase.js";
+import { getScores } from "./utils/firebase.js";
 
 const registrerKnapp = document.querySelector('#registrer-bruker')
 const navnInput = document.querySelector('#navn-input')
@@ -19,14 +19,9 @@ scores.forEach(s=> {
     scoreContainer.appendChild(name)
     scoreContainer.appendChild(score)
     scoreLI.appendChild(scoreContainer)
-    highscores.appendChild(scoreLI)
+    highscores?.appendChild(scoreLI)
 } )
 
-registrerKnapp?.addEventListener('click',() => {
-    if(navnInput.value === '' ){
-        const randNum = Math.ceil(Math.random * 100)
-        brukernavn = `Big_Chungus${randNum}`
-    }
-    brukernavn = navnInput.value
-    signInGuest()
+registrerKnapp?.addEventListener('click', () => {
+    localStorage.setItem('brukernavn',navnInput.value)
 })

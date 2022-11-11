@@ -1,6 +1,5 @@
 import {musikk, eastereggmusikk, lydWin, lydFail, lydTimeOut} from './utils/lyd.js'
 import {nyKunde, lagKnapper} from './utils/funksjoner.js'
-import { brukernavn } from "./home.js";
 import { uploadScore } from './utils/firebase.js';
 
 const startKnapp = document.querySelector('#start-spill')
@@ -16,7 +15,6 @@ const spillRes = document.querySelector('#spill-res')
 const pizza = document.querySelector('#pizza')
 
 lagKnapper(lagPizza)
-
 startKnapp.onclick = startSpill
 
 let nyPizza = []
@@ -26,13 +24,14 @@ const startTime = 30
 let time = startTime;
 timer.innerHTML = time
 
+let brukernavn = localStorage.getItem('brukernavn')
 let points = 0;
 let totalPizza = 0;
 poeng.innerHTML = points
 
 let valgtMusikk
-
 let paused = false
+
 
 function startSpill() {
     points = 0;
@@ -54,6 +53,7 @@ function startSpill() {
 
         timerBar.style.transform = `scaleX(${time === 0? 0 : (time / startTime)-1/30})`
         if (time <= 0) {
+            clearInterval(spillTimer)
             valgtMusikk.stop()
             if(figurContainer.childNodes.length === 0){
                 figurContainer.firstChild.className = 'figur-snakkebobble figur-ut'
@@ -63,18 +63,16 @@ function startSpill() {
                 figurContainer.childNodes[totalPizza-1].childNodes[0].className = 'snakkebobble snakkebobble-ut'
             }
             // gameOverModal.style.display = 'block'
-            let navn = brukernavn
             gameOverModal.className = 'game-over game-over-inn'
             if(!brukernavn ){
                 const randNum = Math.ceil(Math.random() * 100) 
-                navn = `Big_Chungus${randNum}`
+                brukernavn = `Big_Chungus${randNum}`
             }
-            uploadScore(navn, points)
+            uploadScore(brukernavn, points)
             restartKnapp.onclick = () => {
                 gameOverModal.className = 'game-over'
                 startSpill()
             }
-            clearInterval(spillTimer)
             spillRes.innerHTML = `Tida er ute. Du lagde ${points} pizza.`
             lydTimeOut.play()
         }  

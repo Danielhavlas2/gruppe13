@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 html, body {
     height: 100%;
-    font-family: Monaco, monospace;
+    font-family: 'VT323', monospace;
     margin: 0;
     line-height: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -31,15 +34,26 @@ h3{
     transform: translate(-50%, -50%);
 }
 
+button{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input{
+    border: 2px solid #222;
+    border-radius: 4px;
+}
+
 .button {
-    background-color: #CC7722; 
-    border: none;
+    font-size: 1.4rem;
+    background-color: rgba(199, 199, 199, 0.315); 
+    border: 3px solid white;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px black;
     color: white;
-    padding: 15px 32px;
+    padding: 14px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 }
 
 /*instruksjoner*/
@@ -51,10 +65,6 @@ h3{
     font-family: monaco, monospace;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
 
 .tekstboks2 {
     border: 3px dashed maroon;
@@ -109,7 +119,12 @@ h4 {
 .tab {
     float: right;
     width: 20%;
-    height: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
 }
 
 .tab button {
@@ -153,14 +168,24 @@ h4 {
 }
 
 .highscore-container{
+    color: white;
+    text-shadow: 2px 2px 2px black;
     position: absolute;
     bottom: 0;
     left: 0;
     padding:1rem;
     border-radius: 0 1rem 0 0;
-    background-color: #7b7c7b;
-    width: 15rem;
+    background-color: #7b7c7b86;
+    max-width: 12rem;
     height: min-content;
+}
+
+.highscore-container button {
+    color: inherit;
+    margin-top: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
 }
 
 .score-container{
@@ -186,7 +211,7 @@ h4 {
 .leftcorner {
     margin: 0;
     position: absolute;
-    top: 100%;
+    bottom: 0;
     left: 0;
     /*-ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);*/

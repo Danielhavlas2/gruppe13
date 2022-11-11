@@ -40,7 +40,7 @@ export function lagKnapper(lagPizza) {
         ingrKnapp.className = 'ingrediens-knapp'
         ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
         ingrKnapp.onclick = () => lagPizza(ingrediens)
-        ingredienContainer.appendChild(ingrKnapp)
+        ingredienContainer?.appendChild(ingrKnapp)
     })
 }
 
