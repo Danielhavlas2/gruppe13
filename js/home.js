@@ -1,26 +1,32 @@
 import { signInGuest, uploadScore, getScores } from "./utils/firebase.js";
 
 const registrerKnapp = document.querySelector('#registrer-bruker')
-const registrer = document.querySelector('#registrer-bruke')
-const regis = document.querySelector('#registrer-brke')
+const navnInput = document.querySelector('#navn-input')
 
-const highscores = document.querySelector('#highscores')
+const highscores = document.querySelector('.highscores')
+export let brukernavn 
 
+const scores = await getScores()
+scores.forEach(s=> {
+    console.log(s);
+    const scoreLI = document.createElement('li')
+    const scoreContainer = document.createElement('div')
+    scoreContainer.className = 'score-container'
+    const name = document.createElement('p')
+    const score = document.createElement('h5')
+    name.innerHTML = s.username
+    score.innerHTML = s.score
+    scoreContainer.appendChild(name)
+    scoreContainer.appendChild(score)
+    scoreLI.appendChild(scoreContainer)
+    highscores.appendChild(scoreLI)
+} )
 
-registrerKnapp.addEventListener('click', signInGuest)
-registrer.addEventListener('click', () => uploadScore('basfsa',6))
-regis.addEventListener('click', async () => {
-    const scores = await getScores()
-    scores.forEach(s => {
-        console.log(s);
-        const scoreContainer = document.createElement('li')
-        scoreContainer.className = 'score'
-        const name = document.createElement('p')
-        const score = document.createElement('p')
-        name.innerHTML = s.username
-        score.innerHTML = s.score
-        scoreContainer.appendChild(name)
-        scoreContainer.appendChild(score)
-        highscores.appendChild(scoreContainer)
-    } )
+registrerKnapp?.addEventListener('click',() => {
+    if(navnInput.value === '' ){
+        const randNum = Math.ceil(Math.random * 100)
+        brukernavn = `Big_Chungus${randNum}`
+    }
+    brukernavn = navnInput.value
+    signInGuest()
 })

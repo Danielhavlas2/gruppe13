@@ -31,6 +31,6 @@ export const uploadScore = async (username, score) => {
 export const getScores = async () => {
     const doc = await firestore.collection('game').doc('scores').get()
     const data = doc.data()
-    const sortedData = Object.values(data).sort((a,b) => b.score - a.score)
+    const sortedData = Object.values(data).sort((a,b) => b.score - a.score).splice(0,5)
     return sortedData
 }

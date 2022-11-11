@@ -1,15 +1,18 @@
 import {musikk, eastereggmusikk, lydWin, lydFail, lydTimeOut} from './utils/lyd.js'
 import {nyKunde, lagKnapper} from './utils/funksjoner.js'
-// import { signInGuest } from './utils/firebase.js';
+import { brukernavn } from "./home.js";
+import { uploadScore } from './utils/firebase.js';
 
 const startKnapp = document.querySelector('#start-spill')
+const restartKnapp = document.querySelector('#restart-spill')
 const timer = document.querySelector('.timer-text')
 const timerBar = document.querySelector('.timer-bar')
 const poeng = document.querySelector('.poeng')
 const spillContainer = document.querySelector('.spill-container')
 const figurContainer = document.querySelector('.figur-container')
 const kundePizzaE = document.querySelector('#kundePizza')
-const spillRes = document.querySelector('#spillRes')
+const gameOverModal = document.querySelector('.game-over')
+const spillRes = document.querySelector('#spill-res')
 const pizza = document.querySelector('#pizza')
 
 lagKnapper(lagPizza)
@@ -59,9 +62,20 @@ function startSpill() {
                 figurContainer.childNodes[totalPizza-1].className = 'figur-snakkebobble figur-ut'
                 figurContainer.childNodes[totalPizza-1].childNodes[0].className = 'snakkebobble snakkebobble-ut'
             }
-            startKnapp.style.display = 'block'
+            // gameOverModal.style.display = 'block'
+            let navn = brukernavn
+            gameOverModal.className = 'game-over game-over-inn'
+            if(!brukernavn ){
+                const randNum = Math.ceil(Math.random() * 100) 
+                navn = `Big_Chungus${randNum}`
+            }
+            uploadScore(navn, points)
+            restartKnapp.onclick = () => {
+                gameOverModal.className = 'game-over'
+                startSpill()
+            }
             clearInterval(spillTimer)
-            // spillRes.innerHTML = 'Tida er ute. Du lagde '  + points + ' pizza. Trykk "Start spill" for å spille igjen.'
+            spillRes.innerHTML = `Tida er ute. Du lagde ${points} pizza.`
             lydTimeOut.play()
         }  
     }, 1000);

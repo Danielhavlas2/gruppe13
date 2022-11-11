@@ -68,9 +68,9 @@
 .poeng{
     text-shadow: 3px 0px 5px rgb(110, 110, 110);
     color: aliceblue;
-    font-size: 3rem;
+    font-size: 4rem;
     position: absolute;
-    top: 1rem;
+    top: 3rem;
     right: 1rem;
 }
 
@@ -144,7 +144,81 @@
 
 .spill-knapp{
     font-size: 2rem;
+    color: #222;
+    width: 100%;
 }
+
+.ikoner{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 4rem;
+    top: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(233, 219, 219, 0.477);
+}
+
+.start-spill{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 8rem;
+    height: 8rem;
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter: drop-shadow(10px 10px 10px #222);
+    transition: all 500ms ease-out;
+    scale: 1;
+}
+
+.start-spill:hover{
+    scale: 1.2;
+}
+
+.s-spill-knapp{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    filter: none;
+    -webkit-filter:none;
+    margin: 0;
+}
+
+.game-over{
+    background-color: rgb(235, 155, 155);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30rem;
+    height: 20rem;
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter: drop-shadow(10px 10px 10px #222);
+    transition: all 500ms ease-out;
+    scale: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 3rem;
+    border: 0.5rem solid #222;
+    border-radius: 2rem;
+}
+
+.game-over-inn{
+    scale: 1;
+}
+
+
 
 @media (max-width: 900px){
     .figur-inn{

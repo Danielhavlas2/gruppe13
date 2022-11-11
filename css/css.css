@@ -17,7 +17,7 @@ h3{
 
 .container {
     padding: 2rem;
-    height: 500px;
+    height: 100vh;
     position: relative;
 }
 
@@ -149,16 +149,33 @@ h4 {
 /*highscore*/
 
 .highscores {
-    float: left;
-    width: 20%;
-    height: 400px;
-    background-color: #00301E;
-    text-align: center;
-    color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
+    margin-top: 1rem;
 }
+
+.highscore-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding:1rem;
+    border-radius: 0 1rem 0 0;
+    background-color: #7b7c7b;
+    width: 15rem;
+    height: min-content;
+}
+
+.score-container{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 
 
 
