@@ -17,6 +17,7 @@
     height: 70px;
     filter: drop-shadow(5px 5px 5px #222);
     transition: filter 100ms ease-out, scale 100ms ease-out;
+    z-index: 2;
 }
 .ingrediens-knapp:hover {
     scale: 1.2;
@@ -27,6 +28,13 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+}
+
+.b0{
+    z-index: -3;
+}
+
+.b1{
     z-index: -1;
 }
 
@@ -64,4 +72,29 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+.figur-container{
+    overflow: hidden;
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    top: 27.7vh;
+}
+
+.figur{
+    position: absolute;
+    left: -50px;
+    transition: all 1000ms ease-in-out;
+    width: 300px;
+    margin-left: -150px;
+    z-index: -2;
+}
+
+.figur-inn{
+    left: 50%;
+}
+
+.figur-ut{
+    left: 110%;
 }
