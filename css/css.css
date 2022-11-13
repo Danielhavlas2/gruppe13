@@ -12,6 +12,7 @@ html, body {
 /* HJEMSIDE*/
 h1 {
     text-align: center;
+    color: white;
 }
 
 h3{
@@ -134,10 +135,14 @@ h4 {
 
 
 .buttonlink1 {
-    background-color: maroon;
-    border: none;
+    height: 70px;
+    width: 200px;
+    background-color: rgba(255, 0, 0, 0);
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
     color: white;
-    padding: 20px 34px;
+    padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -147,10 +152,14 @@ h4 {
 }
 
 .buttonlink2 {
-    background-color: maroon;
-    border: none;
+    height: 70px;
+    width: 200px;
+    background-color: rgba(255, 0, 0, 0);
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
     color: white;
-    padding: 20px 57px;
+    padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -218,8 +227,10 @@ h4 {
 }
 
 .buttontilbake {
-    background-color: #CC7722; 
-    border: none;
+    background-color: rgba(255, 0, 0, 0);
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
     color: white;
     padding: 15px 32px;
     text-align: center;
