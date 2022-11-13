@@ -29,16 +29,12 @@ let points = 0;
 let totalPizza = 0;
 poeng.innerHTML = points
 
-let valgtMusikk
 let paused = false
-
 
 function startSpill() {
     points = 0;
     totalPizza = 0;
-    const musikkNum = Math.random()*100
-    valgtMusikk = musikkNum < 1? eastereggmusikk : musikk;
-    valgtMusikk.play()
+    musikk.play()
     figurContainer.innerHTML = ''
     startKnapp.style.display = 'none'
     time = startTime
@@ -54,7 +50,7 @@ function startSpill() {
         timerBar.style.transform = `scaleX(${time === 0? 0 : (time / startTime)-1/30})`
         if (time <= 0) {
             clearInterval(spillTimer)
-            valgtMusikk.stop()
+            musikk.stop()
             if(figurContainer.childNodes.length === 0){
                 figurContainer.firstChild.className = 'figur-snakkebobble figur-ut'
                 figurContainer.firstChild.firstChild.firstChild.className = 'snakkebobble snakkebobble-ut'
@@ -62,7 +58,6 @@ function startSpill() {
                 figurContainer.childNodes[totalPizza-1].className = 'figur-snakkebobble figur-ut'
                 figurContainer.childNodes[totalPizza-1].childNodes[0].className = 'snakkebobble snakkebobble-ut'
             }
-            // gameOverModal.style.display = 'block'
             gameOverModal.className = 'game-over game-over-inn'
             if(!brukernavn ){
                 const randNum = Math.ceil(Math.random() * 100) 
@@ -79,8 +74,6 @@ function startSpill() {
     }, 1000);
 
 }
-
-
 
 
 function lagPizza(ingrediens) {
@@ -111,11 +104,9 @@ function lagPizza(ingrediens) {
                 figurContainer.childNodes[totalPizza-1].className = 'figur-snakkebobble figur-ut'
                 figurContainer.childNodes[totalPizza-1].childNodes[0].className = 'snakkebobble snakkebobble-ut'
             }
-            // spillRes.innerHTML = likt? 'Du laget rett pizza' : 'Du laget feil pizza'
             nyPizza = []
             kundePizza = nyKunde() 
             pizza.innerHTML = ''
-            // clearTimeout(pizzaTimeout)
         }
     }
 }
