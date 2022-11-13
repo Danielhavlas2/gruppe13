@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppe 13 spill</title>
+
     <link rel="stylesheet" href="./css/spill.css">
     <link rel="stylesheet" href="./css/css.css">
 </head>
 <body>
-    <img src="./img/restaurant.png" alt="" class="background">
+    <img src="./img/restaurant-bakgrunn.png" alt="" class="background b0">
+    <img src="./img/restaurant-forgrunn.png" alt="" class="background b1">
     <div class="spill-container">
         <div class="timer-container">
             <p class="timer-text"></p>
             <div class="timer-bar"></div>
         </div>
+
+        <button onclick="document.location='hjem.html'">Hjem</button>
+        <button id="muteKnapp"></button>
+        <button id="playPauseKnapp"></button>
+
         <h1 class="poeng"></h1>
         <h1>Gruppe 13 spill</h1>
         <button id="start-spill">Start spill</button>
@@ -23,6 +30,7 @@
         <div class="ingrediens-knapper"></div>
         <h1 id="spillRes"></h1>
     </div>
+    <div class="figur-container"></div>
     <script type="module" src="/js/index.js"></script>
 </body>
 </html>
