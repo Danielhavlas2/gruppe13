@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Gruppe 13 spill</title>
+    
+    <link rel="stylesheet" href="./css/spill.css">
+</head>
+<body>
+    <img src="./img/restaurant-bakgrunn.png" alt="" class="background b0">
+    <img src="./img/restaurant-forgrunn.png" alt="" class="background b1">
+    <div class="spill-container">
+        <div class="timer-container">
+            <p class="timer-text"></p>
+            <div class="timer-bar"></div>
+        </div>
+        <div class="ikoner">
+            <i onclick="document.location='index.html'" class="ri-home-2-fill spill-knapp"></i>
+            <i class="ri-volume-up-fill spill-knapp" id="mute"></i>
+            <i class="ri-pause-circle-fill spill-knapp" id="pause"></i>
+        </div>
+
+        <h1 class="poeng"></h1>
+        <img src="./img/ikoner/start-spill-knapp.png" alt="Start Spill" class="start-spill" id="start-spill"/>
+        <h2 id="kundePizza"></h2>
+        <div id="pizza"></div>
+        <div class="ingrediens-container"></div>
+        <div class="game-over">
+            <p id="spill-res"></p>
+            <img src="./img/ikoner/start-spill-knapp.png" alt="Start Spill" class="start-spill s-spill-knapp" id="restart-spill"/>
+        </div>
+    </div>
+    <div class="figur-container"></div>
+    <script type="module" src="./js/index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+</body>
+</html>
