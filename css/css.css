@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 html, body {
     height: 100%;
-    font-family: Monaco, monospace;
+    font-family: 'VT323', monospace;
     margin: 0;
-    background-color: maroon;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -12,8 +15,13 @@ h1 {
     color: white;
 }
 
+h3{
+    margin-top: 2rem;
+}
+
 .container {
-    height: 500px;
+    padding: 2rem;
+    height: 100vh;
     position: relative;
 }
 
@@ -27,17 +35,26 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+button{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input{
+    border: 2px solid #222;
+    border-radius: 4px;
+}
+
 .button {
-    background-color: rgba(255, 0, 0, 0); 
-    border: solid;
-    border-width: 5px;
-    border-color: white;
+    font-size: 1.4rem;
+    background-color: rgba(199, 199, 199, 0.315); 
+    border: 3px solid white;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px black;
     color: white;
-    padding: 15px 32px;
+    padding: 14px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 }
 
 /*instruksjoner*/
@@ -49,10 +66,6 @@ h1 {
     font-family: monaco, monospace;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
 
 .tekstboks2 {
     border: 3px dashed maroon;
@@ -107,7 +120,12 @@ h4 {
 .tab {
     float: right;
     width: 20%;
-    height: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
 }
 
 .tab button {
@@ -154,20 +172,44 @@ h4 {
 
 /*highscore*/
 
-.tab2 {
-    float: left;
-    width: 20%;
-    height: 400px;
-    background-color: rgba(255, 0, 0, 0);
-    text-align: center;
-    color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    border: solid;
-    border-width: 5px;
-    border-color: white;
+.highscores {
+    margin-top: 1rem;
 }
+
+.highscore-container{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding:1rem;
+    border-radius: 0 1rem 0 0;
+    background-color: #7b7c7b86;
+    max-width: 12rem;
+    height: min-content;
+}
+
+.highscore-container button {
+    color: inherit;
+    margin-top: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.score-container{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 
 
 
@@ -178,7 +220,7 @@ h4 {
 .leftcorner {
     margin: 0;
     position: absolute;
-    top: 100%;
+    bottom: 0;
     left: 0;
     /*-ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);*/
@@ -272,22 +314,13 @@ h4 {
     font-size: 16px;
   }
 
-button#playPauseKnapp{
-    background:url(ikoner/pause.png) no-repeat; //pause.png
+.spill-knapp{
     border:none;
-    width: 12px;
-    height: 14px;
-    cursor:pointer;
-    outline: none;
-}
-
-button#muteKnapp{
-    background:url(ikoner/speaker.png) no-repeat; //speaker.png
-    border:none;
-    width: 12px;
-    height: 14px;
+    width: 2rem;
+    height: 2rem;
     cursor:pointer;
     outline:none;
 }
+
 
 

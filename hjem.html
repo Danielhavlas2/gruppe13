@@ -8,8 +8,7 @@
     <title>Gruppe 13 spill</title>
 </head>
 <body>
-    <br>
-    <h1>NTNU Pizzeria</h1>
+    <img src="./img/restaurant-utside.png" alt="" class="background b0">
 
     <div class="container">
         <div class="center">
@@ -21,14 +20,22 @@
 
     
     <div class="tab">
-        <a href="instruksjoner.html" class="buttonlink1">Instruksjoner</a>
-        <a href="om.html" class="buttonlink2">Om oss</a>
+        <a href="instruksjoner.html" class="button">Instruksjoner</a>
+        <a href="om.html" class="button">Om oss</a>
     </div>
 
 
-    <div class="tab2">
-        <h2>Highscore</h2>
+    <div class="highscore-container">
+        <label for="navn">Navnet ditt:</label>
+        <input name="navn" id="navn-input" type="text">
+        <button id="registrer-bruker">Registrer</button>
+        <ol class="highscores">
+            <h2>Highscore</h2>
+        </ol>
     </div>
-    
+    <script type="module" src="./js/home.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </body>
 </html>

@@ -1,17 +1,37 @@
 import { ingredienser } from "../data.js";
 
-const ingrediensKnapper = document.querySelector('.ingrediens-knapper')
+const ingredienContainer = document.querySelector('.ingrediens-container')
 const figurContainer = document.querySelector('.figur-container')
 
 export function figur() {
+    const figurSnakkebobble = document.createElement('div')
+    figurSnakkebobble.className = 'figur-snakkebobble'
     const figurE = document.createElement('img')
     const randomTall = Math.ceil(Math.random() * 8)
+    figurE.src = `../img/figurer/figur${randomTall}.png`
+    const snakkebobble = document.createElement('div')
+    snakkebobble.className = 'snakkebobble'
     figurE.className = 'figur'
     setTimeout(() => {
-        figurE.className = 'figur figur-inn'
+        snakkebobble.className = 'snakkebobble snakkebobble-inn'
+        figurSnakkebobble.className = 'figur-snakkebobble figur-inn'
     },3)
-    figurE.src = `../img/figurer/figur${randomTall}.png`
-    figurContainer.appendChild(figurE)
+    figurSnakkebobble.appendChild(snakkebobble)
+    figurSnakkebobble.appendChild(figurE)
+    figurContainer.appendChild(figurSnakkebobble)
+    return snakkebobble
+}
+
+export function nyKunde() {
+    const kundePizza = nyttPizzaOrdre()
+    const snakkebobble = figur()
+    kundePizza.forEach(ingrediens => {
+        const ingr = document.createElement('img')
+        ingr.className = 'ingrediens-knapp'
+        ingr.src = `../img/ikoner/${ingrediens}.png`
+        snakkebobble.appendChild(ingr)
+    })
+    return kundePizza
 }
 
 export function lagKnapper(lagPizza) {
@@ -20,8 +40,7 @@ export function lagKnapper(lagPizza) {
         ingrKnapp.className = 'ingrediens-knapp'
         ingrKnapp.src = `../img/ikoner/${ingrediens}.png`
         ingrKnapp.onclick = () => lagPizza(ingrediens)
-        ingrediensKnapper.appendChild(ingrKnapp)
-        
+        ingredienContainer?.appendChild(ingrKnapp)
     })
 }
 
