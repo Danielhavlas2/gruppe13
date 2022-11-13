@@ -58,57 +58,6 @@ input{
     text-decoration: none;
 }
 
-/*instruksjoner*/
-.div2 {
-    padding: 50px;
-    column-width: 100%;
-    margin: 25px;
-    float: center;
-    font-family: monaco, monospace;
-}
-
-
-.tekstboks2 {
-    border: 3px dashed maroon;
-    float: left;
-    width: 90%;
-    margin: 5px;
-    height: auto;
-}
-
-h4 {
-    font-family: monaco, monospace;
-    font-weight:bolder;
-    margin: 15px;
-    font-size: 32px;
-    text-align: left;
-    color: forestgreen;
-}
-
-#two {
-    text-align: left;
-    font-family: monaco, monospace;
-    font: 15px;
-    margin: 15px;
-}
-
-/* om spillet*/
-.div1 {
-    padding: 50px;
-    column-width: 100%;
-    margin: 25px;
-    float: center;
-    font-family: monaco, monospace;
-}
-
-.tekstboks {
-    border: 3px dashed maroon;
-    float: left;
-    width: 30%;
-    margin: 10px;
-    height: 400px;
-}
-
 
 
 /* hjem */
@@ -132,42 +81,6 @@ h4 {
     display: block;
     color: black;
 }
-
-
-.buttonlink1 {
-    height: 70px;
-    width: 200px;
-    background-color: rgba(255, 0, 0, 0);
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 180px 2px 0px;
-    cursor: pointer;
-}
-
-.buttonlink2 {
-    height: 70px;
-    width: 200px;
-    background-color: rgba(255, 0, 0, 0);
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 10px 2px 215px;
-    cursor: pointer;
-}
-
 
 
 /*highscore*/
@@ -266,61 +179,6 @@ h4 {
     cursor: pointer;
   }
 
- 
-  .leftuppercorner {
-    margin: 0;
-    position: absolute;
-    top: 0%;
-    left: 0%
-  }
-
-  .rightuppercorner {
-    margin: 0;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-  }
-
-  .divpoeng {
-    background-color: grey; 
-    border: none;
-    color: white;
-    padding: 0px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    height: 50px;
-    width: 100px;
-  }
-
-
-  .timerplassering {
-    margin: 0;
-    position: absolute;
-    top: 0;
-    width: 70;
-    left: 15%;
-    right: 15%;
-  }
-
-
-  .timer {
-    background-color: darkslategray;
-    text-align: center;
-    color: white;
-    padding: 5px;
-    font-size: 16px;
-  }
-
-.spill-knapp{
-    border:none;
-    width: 2rem;
-    height: 2rem;
-    cursor:pointer;
-    outline:none;
-}
-
 @media (max-width:900px) {
     body{
         font-size: 1rem;
@@ -366,6 +224,3 @@ h4 {
         top: 15%;
     }
 }
-
-
-
