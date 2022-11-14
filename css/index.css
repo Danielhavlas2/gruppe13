@@ -60,6 +60,11 @@ input{
     padding: 0.4em 1em;
     text-align: center;
     text-decoration: none;
+    transition: font-size 200ms ease-out;
+}
+
+.button:hover {
+    font-size: 1.7rem;
 }
 
 

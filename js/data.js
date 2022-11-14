@@ -1,1 +1,1 @@
-export const ingredienser = ['bunn','saus','ost', 'pepperoni', 'bacon', 'paprika', 'jalapenos', 'løk', 'basilikum', 'sopp']
+export const ingredienser = ['bunn','saus','ost', 'pepperoni', 'bacon', 'paprika', 'jalapenos', 'løk', 'basilikum', 'sopp'];

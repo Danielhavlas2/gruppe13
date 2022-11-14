@@ -5,7 +5,7 @@ function sound(src, loop) {
   this.sound.setAttribute("controls", "none");
   this.sound.style.display = "none";
   if(loop){
-      this.sound.loop = true
+      this.sound.loop = true;
   }
   document.body.appendChild(this.sound);
   this.play = function(){
@@ -15,14 +15,13 @@ function sound(src, loop) {
     this.sound.pause();
   }
   this.pause = function(){
-    this.sound.pause()
+    this.sound.pause();
   }
-  this.muted = false
+  this.muted = false;
   
 }
 
-export const musikk = new sound("../lyd/musikk1.wav", true)
-export const eastereggmusikk = new sound("../lyd/eastereggmusikk.wav", true)
-export const lydWin = new sound("../lyd/points.mp3");
-export const lydFail = new sound("../lyd/fail.mp3");
-export const lydTimeOut = new sound("../lyd/wrong.mp3");
+export const musikk = new sound("../../lyd/musikk1.wav", true);
+export const lydWin = new sound("../../lyd/points.mp3");
+export const lydFail = new sound("../../lyd/fail.mp3");
+export const lydTimeOut = new sound("../../lyd/wrong.mp3");
